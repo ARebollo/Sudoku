@@ -19,7 +19,10 @@ int HallarValor(casilla c);
 //Pone el valor de la casilla pedida a 0
 void BorrarCasilla(casilla c);
 
-//Aleatoriza una casilla pedida con un valor v�lido con un m�ximo especificado
+//True si está vacía, false si no
+bool EstaVacia(casilla c);
+
+//Aleatoriza una casilla pedida con un valor válido con un máximo especificado
 void aleatorio(casilla c,int valoresposibles);
 
 
