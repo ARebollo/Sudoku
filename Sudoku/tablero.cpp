@@ -7,7 +7,7 @@ void inicializarcajas(tablero &tab)
 {
 	switch (tab.tamano)
 	{
-	case 1: //En el tablero 1x1 solamente hay un caja
+	case 1: //En el tablero 1x1 solamente hay una caja
 		tab.table[0][0].caja=1;
 		break;
 	case 2: 
@@ -59,7 +59,7 @@ void inicializarcajas(tablero &tab)
 		}
 		break;
 
-	//Tamaño 3
+	//TamaÃ±o 3
 	case 3:
 		for (int i=0;i<tab.tamano*tab.tamano;i++)
 		{
@@ -118,7 +118,7 @@ void inicializarcajas(tablero &tab)
 						break;
 					}
 					break;
-				//Últimas tres filas
+				//Ãšltimas tres filas
 				case 6:
 				case 7:
 				case 8:	
@@ -151,7 +151,7 @@ void inicializarcajas(tablero &tab)
 		}
 		break;
 
-	//Tamaño 4
+	//TamaÃ±o 4
 	case 4:
 		for (int i=0;i<tab.tamano*tab.tamano;i++)
 		{
@@ -274,7 +274,7 @@ void inicializarcajas(tablero &tab)
 					default:
 						break;
 					}
-				//Últimas cuatro filas
+				//Ãšltimas cuatro filas
 				case 12:
 				case 13:
 				case 14:
@@ -344,8 +344,13 @@ void aleatorioTablero(tablero &tab,int fila,int columna)
 		bool conf = false;
 		do
 			{
+<<<<<<< HEAD
                 //Para cada tamaño del teclado
 				switch (tab.tamano)
+=======
+                //Para cada tamaÃ±o del teclado
+				switch (tab.tamanio)
+>>>>>>> origin/master
 				{
 				case 1:
 					tab.table[fila][columna].casi.valor=1;
