@@ -56,7 +56,7 @@ int tamReal;
 int makecolor2(int color);
 
 // Dibuja en la pantalla el borde de un tablero con el ancho indicado
-void TEntornoPintarRejilla(int tamanio);
+void TEntornoPintarRejilla(int tamano);
 
 // Invierte fila/columna.  El tablero gráfico (entorno) se dibuja por
 // Columnas/Filas, mientras en C++ se trata con matrices en Filas/Columnas.
@@ -98,18 +98,18 @@ int makecolor2(int color) {
 	return col;
 }
 
-void TEntornoPintarRejilla(int tamanio) {
+void TEntornoPintarRejilla(int tamano) {
 	// Comenzamos en la 0,0
 	int i;
 
 	acquire_screen();
 	//rectfill( screen, ORIGEN_X+1, ORIGEN_Y+1, ORIGEN_X+columnas*DISTANCIA_COLS-1,ORIGEN_Y+filas*DISTANCIA_FILAS-1 , makecolor2(COLOR_FONDO));
-	int columnas = tamanio * tamanio;
-	int filas = tamanio * tamanio;
+	int columnas = tamano * tamano;
+	int filas = tamano * tamano;
 
 	// horizontales
 	for (i = 0; i <= (columnas); i++) {
-		if (i % tamanio == 0) {
+		if (i % tamano == 0) {
 			line(screen, ORIGEN_X + 0 * DISTANCIA_COLS,
 					ORIGEN_Y + i * DISTANCIA_FILAS,
 					ORIGEN_X + columnas * DISTANCIA_COLS,
@@ -133,7 +133,7 @@ void TEntornoPintarRejilla(int tamanio) {
 
 	//verticales
 	for (i = 0; i <= (filas); i++) {
-		if (i % tamanio == 0) {
+		if (i % tamano == 0) {
 			line(screen, ORIGEN_X + i * DISTANCIA_COLS,
 					ORIGEN_Y + 0 * DISTANCIA_FILAS,
 					ORIGEN_X + i * DISTANCIA_COLS,
@@ -209,8 +209,8 @@ void TEntornoIniciar(int tam) {
 }
 
 
-bool TEntornoCargarConfiguracion (int   matriz[MAXTAMANIO][MAXTAMANIO],
-								  int 	&tamanio,
+bool TEntornoCargarConfiguracion (int   matriz[MAXtamano][MAXtamano],
+								  int 	&tamano,
 								  int   &aleatorioOFichero,
 								  int   &numValoresAleatorios){
 
@@ -222,7 +222,7 @@ bool TEntornoCargarConfiguracion (int   matriz[MAXTAMANIO][MAXTAMANIO],
 	entrada.open("sudoku.cnf");
 	if (entrada.is_open()) {
 		getline (entrada, cadena);
-		tamanio=atoi(cadena.c_str());
+		tamano=atoi(cadena.c_str());
 
 		getline (entrada, cadena);
 		aleatorioOFichero= atoi(cadena.c_str());
@@ -230,9 +230,9 @@ bool TEntornoCargarConfiguracion (int   matriz[MAXTAMANIO][MAXTAMANIO],
 		getline(entrada, cadena);
 		numValoresAleatorios=atoi (cadena.c_str());
 
-		for (int i = 0; i < tamanio * tamanio; i++) {
+		for (int i = 0; i < tamano * tamano; i++) {
 			getline(entrada, cadena);
-			for (int j = 0; j < tamanio * tamanio; j++) {
+			for (int j = 0; j < tamano * tamano; j++) {
 				//t[i][j] = cadena[j] - 48;
 				matriz[i][j] = toNumber(cadena[j]);
 			}

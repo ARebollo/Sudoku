@@ -5,15 +5,15 @@
 //primer numero es la fila, segundo la columna
 void inicializarcajas(tablero &tab)
 {
-	switch (tab.tamanio)
+	switch (tab.tamano)
 	{
 	case 1: //En el tablero 1x1 solamente hay un caja
 		tab.table[0][0].caja=1;
 		break;
 	case 2: 
-		for (int i=0;i<tab.tamanio*tab.tamanio;i++)
+		for (int i=0;i<tab.tamano*tab.tamano;i++)
 		{
-			for (int j=0;j<tab.tamanio*tab.tamanio;j++) //Con estos dos bucles se recorre el tablero entero
+			for (int j=0;j<tab.tamano*tab.tamano;j++) //Con estos dos bucles se recorre el tablero entero
 			{	
 				//i=0,1 son cajas 1 y 3, i=2,3 son cajas 2 y 4
 				switch (i) 
@@ -61,9 +61,9 @@ void inicializarcajas(tablero &tab)
 
 	//Tamaño 3
 	case 3:
-		for (int i=0;i<tab.tamanio*tab.tamanio;i++)
+		for (int i=0;i<tab.tamano*tab.tamano;i++)
 		{
-			for (int j=0;j<tab.tamanio*tab.tamanio;j++) //Con estos dos bucles se recorre el tablero entero
+			for (int j=0;j<tab.tamano*tab.tamano;j++) //Con estos dos bucles se recorre el tablero entero
 			{	
 				//i=0,1,2 son cajas 1,4 y 7, i=3,4,5 son cajas 2, 5 y 8, i=6,7,8 son cajas 3,6 y 9
 				switch (i) 
@@ -104,7 +104,6 @@ void inicializarcajas(tablero &tab)
 					case 2:
 						tab.table[i][j].caja=4;
 						break;
-					
 					case 3:
 					case 4:
 					case 5: 
@@ -134,6 +133,7 @@ void inicializarcajas(tablero &tab)
 					case 4:
 					case 5: 
 						tab.table[i][j].caja=8;
+						break;
 					case 6:
 					case 7:
 					case 8:	
@@ -153,9 +153,9 @@ void inicializarcajas(tablero &tab)
 
 	//Tamaño 4
 	case 4:
-				for (int i=0;i<tab.tamanio*tab.tamanio;i++)
+		for (int i=0;i<tab.tamano*tab.tamano;i++)
 		{
-			for (int j=0;j<tab.tamanio*tab.tamanio;j++) //Con estos dos bucles se recorre el tablero entero
+			for (int j=0;j<tab.tamano*tab.tamano;j++) //Con estos dos bucles se recorre el tablero entero
 			{	
 				switch (i) //i=1,2 son cajas 1 y 3, i=3,4 son cajas 2 y 4
 				{
@@ -308,6 +308,7 @@ void inicializarcajas(tablero &tab)
 					case 15:
 						tab.table[i][j].caja=16;
 						break;
+
 					default:
 						break;
 					}
@@ -325,12 +326,12 @@ void inicializarcajas(tablero &tab)
 bool conflicto(tablero tab,int fila,int columna) //true si hay, false si no
 {
 	bool conf = false;
-	for (int i=0;i<tab.tamanio*tab.tamanio;i++)
+	for (int i=0;i<tab.tamano*tab.tamano;i++)
 	{
 		if (tab.table[i][columna].valor==tab.table[fila][columna].valor&&i!=fila)
 			conf=true;
 	}
-	for (int j=0;j<tab.tamanio*tab.tamanio;j++)
+	for (int j=0;j<tab.tamano*tab.tamano;j++)
 	{
 		if (tab.table[fila][j].valor==tab.table[fila][j].valor&&j!=columna)
 			conf=true;
@@ -344,7 +345,7 @@ void aleatorioTablero(tablero &tab,int fila,int columna)
 		do
 			{
                 //Para cada tamaño del teclado
-				switch (tab.tamanio)
+				switch (tab.tamano)
 				{
 				case 1:
 					tab.table[fila][columna].casi.valor=1;

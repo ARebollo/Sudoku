@@ -24,7 +24,7 @@
 
 // Dimensiones máximas  del tablero
 
-const int MAXTAMANIO	= 16;
+const int MAXtamano	= 16;
 
 
 // -------------------------------------------------------------
@@ -57,7 +57,7 @@ enum TipoZona {Zona1, Zona2, Zona3};
 
 /**
 
-	PRE:  1 <= tam <= MAXTAMANIO/4,
+	PRE:  1 <= tam <= MAXtamano/4,
 	POST: Inicia la pantalla de juego, incluyendo una rejilla cuadrada de filas*columnas
 */
 void TEntornoIniciar (int tam);
@@ -71,24 +71,24 @@ void TEntornoIniciar (int tam);
 		     FALSE: en caso contrario.
     PARÁMETROS:
 		Si la configuración se lee de forma correcta se devolverá:
-		   matriz:              matriz cuadrada de tamanioxtamanio con los valores leidos de ficheros
+		   matriz:              matriz cuadrada de tamanoxtamano con los valores leidos de ficheros
 		                        correspondientes al patrón de inicio.
-		   tamanio:             número de regiones del sudoku 1= 1x1., 2= 2x2, 3=3x3, 4=4x4
+		   tamano:             número de regiones del sudoku 1= 1x1., 2= 2x2, 3=3x3, 4=4x4
 		   alearorioOFichero:   0 si el patrón de inicio se genera aleatoriamente y 1 si se lee de fichero
 		   NumValoresAlearorio: número de valores aleatorios a generar
 
 		Por defecto, el archivo sudoku.cnf se encuentra en el directorio  del proyecto
  */
-bool TEntornoCargarConfiguracion (int   matriz[MAXTAMANIO][MAXTAMANIO],
-								  int 	&tamanio,
+bool TEntornoCargarConfiguracion (int   matriz[MAXtamano][MAXtamano],
+								  int 	&tamano,
 								  int   &aleatorioOFichero,
 								  int   &numValoresAleatorios);
 
 
 /**
 	PRE:  fila y columna son coordenadas válidas en el entorno.
-	PRE:  0 <= fila <= MAXTAMANIO,
-	PRE:  0 <= columna <= MAXTAMANIO,
+	PRE:  0 <= fila <= MAXtamano,
+	PRE:  0 <= columna <= MAXtamano,
 	POST: Enmarca una casilla con coordenadas fila, columna en un rectángulo azul.
 */
 void TEntornoActivarCasilla(int fila, int columna);
@@ -96,8 +96,8 @@ void TEntornoActivarCasilla(int fila, int columna);
 
 
 /**
- *  PRE:  0 <= fila <= MAXTAMANIO,
-	PRE:  0 <= columna <= MAXTAMANIO,
+ *  PRE:  0 <= fila <= MAXtamano,
+	PRE:  0 <= columna <= MAXtamano,
     PRE: fila y columna son coordenadas válidas en el entorno.
 	POST: Enmarca una casilla con coordenadas fila, columna en un rectángulo blanco
 */
@@ -105,27 +105,27 @@ void TEntornoDesactivarCasilla(int fila, int columna);
 
 
 /**
-	PRE:  { 0 <= fila < MAXTAMANIO }
-	PRE:  { 0 <= columna < MAXTAMANIO}
+	PRE:  { 0 <= fila < MAXtamano }
+	PRE:  { 0 <= columna < MAXtamano}
     PRE:  fila y columna son coordenadas válidas en el entorno.
-    PRE:  { 1 <=  valor <= MAXTAMANIO}
+    PRE:  { 1 <=  valor <= MAXtamano}
 	POST: Coloca en una casilla el "valor"
 */
 void TEntornoPonerNumero(int fila, int columna, int valor);
 
 /**
-	PRE:  { 0 <= fila < MAXTAMANIO }
-	PRE:  { 0 <= columna < MAXTAMANIO}
+	PRE:  { 0 <= fila < MAXtamano }
+	PRE:  { 0 <= columna < MAXtamano}
     PRE:  fila y columna son coordenadas válidas en el entorno.
-    PRE:  { 1 <=  valor <=MAXTAMANIO}
+    PRE:  { 1 <=  valor <=MAXtamano}
 	POST: Coloca en una casilla el  "valor" con el color de casilla inicial
 */
 
 void TEntornoPonerNumeroInicial(int fila, int columna, int valor) ;
 
 /**
- * 	PRE:  0 <= fila < MAXTAMANIO,
-	PRE:  0 <= columna < MAXTAMANIO,
+ * 	PRE:  0 <= fila < MAXtamano,
+	PRE:  0 <= columna < MAXtamano,
 	PRE: fila y columna son coordenadas válidas en el tablero
 	POST: Elimina del entorno el valor que existe en la casilla cuyas coordenadas son fila, columna.
 */
@@ -146,7 +146,7 @@ void TEntornoMostrarMensaje (TipoZona zona, std::string msg);
 void TEntornoMostrarMensajeFin (std::string cad);
 
 /**
-    PRE:  { 1 <= valor <= MAXTAMANIO  1 <= pos <= MAXTAMANIO}
+    PRE:  { 1 <= valor <= MAXtamano  1 <= pos <= MAXtamano}
     PARAM:
     	Entrada: valor: valor posible para la posición donde me encuentre
     	pos: indica la columna de la pantalla donde pintar el valor

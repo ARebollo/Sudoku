@@ -21,10 +21,10 @@ void runDemo() {
 	bool salir = false;	//bandera que indica si el programa termina,
 						//se activa al pulsar Escape
 
-	int tab[MAXTAMANIO][MAXTAMANIO]; //matriz en la que se almacenan
+	int tab[MAXtamano][MAXtamano]; //matriz en la que se almacenan
 									 //los valores inciales del tablero
 
-	int tamanio;   //número de subtableros de Sudoku por fila
+	int tamano;   //número de subtableros de Sudoku por fila
 				   //o columna, valores posibles 1, 2, 3 o 4
 
 	int aleatorioOFichero, numValores;
@@ -32,16 +32,16 @@ void runDemo() {
 	int tiempoPausa = 500000;
 
 	//se recupera la información almacenada en el fichero de configuración
-	if (TEntornoCargarConfiguracion(tab, tamanio, aleatorioOFichero,
+	if (TEntornoCargarConfiguracion(tab, tamano, aleatorioOFichero,
 			numValores)) {
 
 		// pinta la rejilla
-		TEntornoIniciar(tamanio);
+		TEntornoIniciar(tamano);
 
 		// pinta en pantalla el patrón de inicio leido del fichero de cinfiguración
 		int valor;
-		for (int i = 0; i < tamanio * tamanio; i++)
-			for (int j = 0; j < tamanio * tamanio; j++) {
+		for (int i = 0; i < tamano * tamano; i++)
+			for (int j = 0; j < tamano * tamano; j++) {
 				valor = tab[i][j];
 
 				if (valor > 0)
@@ -55,7 +55,7 @@ void runDemo() {
 
 		int i = 1;		// indica la posición de pantalla donde pintar el valor
 
-		for (i = 1; i < tamanio * tamanio; i++) {
+		for (i = 1; i < tamano * tamano; i++) {
 			TEntornoMostrarValoresPosibles(i, i);
 		}
 
@@ -74,7 +74,7 @@ void runDemo() {
 				break;
 			case TDerecha:
 				TEntornoDesactivarCasilla(fila, columna);
-				if (columna < (tamanio * tamanio) - 1)
+				if (columna < (tamano * tamano) - 1)
 					columna++;
 				TEntornoActivarCasilla(fila, columna);
 				break;
@@ -86,7 +86,7 @@ void runDemo() {
 				break;
 			case TAbajo:
 				TEntornoDesactivarCasilla(fila, columna);
-				if (fila < (tamanio * tamanio) - 1)
+				if (fila < (tamano * tamano) - 1)
 					fila++;
 				TEntornoActivarCasilla(fila, columna);
 				break;

@@ -5,19 +5,29 @@
 struct casilla {
 	int valor;
 	bool inicial; //True si es un valor inicial del tablero
+	bool vacia;
 };
 
 //Inicializa una casilla
 void iniciar(casilla c);
 
 //Pone un valor en una casilla pedida
-void PonerValor(casilla c,int valor);
+void ponerValor(casilla c,int valor);
+
+//Poner un valor inicial en una casilla pedida
+void ponerValorInicial(casilla cas,int valor);
+
+//True si es inicial, false si no
+bool esInicial(casilla c);
+
+//True si esta vacia, false si no
+bool estaVacia(casilla c);
 
 //Devuelve el valor en la casilla pedida
-int HallarValor(casilla c);
+int hallarValor(casilla c);
 
 //Pone el valor de la casilla pedida a 0
-void BorrarCasilla(casilla c);
+void borrarCasilla(casilla c);
 
 //Aleatoriza una casilla pedida con un valor válido con un máximo especificado
 void aleatorio(casilla c,int valoresposibles);
