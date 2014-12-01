@@ -27,7 +27,7 @@ void llenador (tablero &tab)
 Esquema de como hacerlo:
 1. Comprueba si hay algún valor posible.
 2. Si no lo hay, se llama a sí misma en la casilla anterior
-3. Si lo hay, genera un valor aleatorio válido para esa casilla.
+3. Si lo hay y la casilla no es inicial, genera un valor aleatorio válido para esa casilla.
 4. Una vez generado un valor válido, si la casilla no es la última, se llama a sí mismo en la casilla siguiente.
 5. Si ha llegado a la última casilla, el sudoku se ha generado correctamente.
 
