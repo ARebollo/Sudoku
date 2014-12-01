@@ -2,6 +2,41 @@
 #include <iostream>
 #include <time.h>
 
+/*
+La parte de las cajas se puede hacer directamente en el módulo conflicto haciendo la división del número de fila por el tamaño del tablero:
+
+Ejemplo para 3x3 con la casilla [numfila][numcolumna]:
+
+for (i=0;i<tamano;i++)
+{
+  for (j=0;j<tamano;i++)
+  {
+  if ((i/tamano==numfila/tamano)&&j/tamano==numcolumna/tamano)
+  {
+  if (valorcasilla[i][j]==valorcasilla[numfila][numcolumna])
+  conflicto=true;
+  }
+  }
+}
+*/
+
+La parte de las cajas se puede hacer directamente en el módulo conflicto haciendo la división del número de fila por el tamaño del tablero:
+
+Ejemplo para 3x3 con la casilla [numfila][numcolumna]:
+
+for (i=0;i<tamano;i++)
+{
+  for (j=0;j<tamano;i++)
+  {
+  if ((i/tamano==numfila/tamano)&&j/tamano==numcolumna/tamano)
+  {
+  if (valorcasilla[i][j]==valorcasilla[numfila][numcolumna])
+  conflicto=true;
+  }
+  }
+}
+*/
+
 //primer numero es la fila, segundo la columna
 void inicializarcajas(tablero &tab)
 {
@@ -59,7 +94,7 @@ void inicializarcajas(tablero &tab)
 		}
 		break;
 
-	//Tamaño 3
+	//TamaÃ±o 3
 	case 3:
 		for (int i=0;i<tab.tamano*tab.tamano;i++)
 		{
@@ -118,7 +153,7 @@ void inicializarcajas(tablero &tab)
 						break;
 					}
 					break;
-				//Últimas tres filas
+				//Ãšltimas tres filas
 				case 6:
 				case 7:
 				case 8:	
@@ -151,7 +186,7 @@ void inicializarcajas(tablero &tab)
 		}
 		break;
 
-	//Tamaño 4
+	//TamaÃ±o 4
 	case 4:
 		for (int i=0;i<tab.tamano*tab.tamano;i++)
 		{
@@ -274,7 +309,7 @@ void inicializarcajas(tablero &tab)
 					default:
 						break;
 					}
-				//Últimas cuatro filas
+				//Ãšltimas cuatro filas
 				case 12:
 				case 13:
 				case 14:
@@ -345,10 +380,10 @@ void aleatorioTablero(tablero &tab,int fila,int columna)
 		do
 			{
 <<<<<<< HEAD
-                //Para cada tama�o del teclado
+                //Para cada tamaño del teclado
 				switch (tab.tamano)
 =======
-                //Para cada tamaño del teclado
+                //Para cada tamaÃ±o del teclado
 				switch (tab.tamanio)
 >>>>>>> origin/master
 				{
