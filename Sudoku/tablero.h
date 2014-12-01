@@ -13,6 +13,7 @@ struct tablero {
 
 //PRE: fila, columna < MAXtamano
 //POST: Devuelve true si el valor en tablero.table[fila][columna] tiene algún conflicto con algún otro valor
+//Complejidad: O(n)
 bool conflicto (tablero tab,int fila,int columna);
 
 #endif // !TABLERO_H_
