@@ -3,13 +3,8 @@
 #include "casilla.h"
 const int MAXTtamano = 16;
 //Casilla se puede reutilizar para otros juegos, pero en el sudoku requiere tener un identificador de en qué caja está
-struct casillaSudoku 
-{
-	casilla casi;
-	int caja;
-};
 
-typedef casillaSudoku Tmatriz[MAXTtamano][MAXTtamano];
+typedef casilla Tmatriz[MAXTtamano][MAXTtamano];
 
 struct tablero {
 	Tmatriz table;
