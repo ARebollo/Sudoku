@@ -50,36 +50,3 @@ bool conflicto(tablero tab,int fila,int columna) //true si hay, false si no
 	}
 	return conf;
 }
-
-void aleatorioTablero(tablero &tab,int fila,int columna)
-{
-		bool conf = false;
-		do
-			{
-<<<<<<< HEAD
-                //Para cada tamaño del teclado
-				switch (tab.tamano)
-=======
-                //Para cada tamaÃ±o del teclado
-				switch (tab.tamanio)
->>>>>>> origin/master
-				{
-				case 1:
-					tab.table[fila][columna].casi.valor=1;
-					break;
-				case 2:
-					aleatorio(tab.table[fila][columna].casi,4);
-					break;
-				case 3:
-					aleatorio(tab.table[fila][columna].casi,9);
-					break;
-				case 4:
-					aleatorio(tab.table[fila][columna].casi,16);
-					break;
-				default:
-					break;
-				}
-				conf=conflicto(tab,fila,columna);
-			}
-			while (conflicto(tab,fila,columna==true));
-}
