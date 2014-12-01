@@ -1,10 +1,9 @@
 #ifndef TABLERO_H_
 #define TABLERO_H_
 #include "casilla.h"
-const int MAXTtamano = 16;
-//Casilla se puede reutilizar para otros juegos, pero en el sudoku requiere tener un identificador de en qué caja está
+const int MAXtamano = 16;
 
-typedef casilla Tmatriz[MAXTtamano][MAXTtamano];
+typedef casilla Tmatriz[MAXtamano][MAXtamano];
 
 struct tablero {
 	Tmatriz table;
