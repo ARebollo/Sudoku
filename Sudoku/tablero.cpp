@@ -24,9 +24,9 @@ La parte de las cajas se puede hacer directamente en el módulo conflicto hacien
 
 Ejemplo para 3x3 con la casilla [numfila][numcolumna]:
 
-for (i=0;i<tamano;i++)
+for (i=0;i<tamano*tamano;i++)
 {
-  for (j=0;j<tamano;i++)
+  for (j=0;j<tamano*tamano;j++)
   {
   if ((i/tamano==numfila/tamano)&&j/tamano==numcolumna/tamano)
   {
