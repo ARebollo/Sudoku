@@ -22,7 +22,6 @@ int hallarValor(casilla cas)
 	return  valor;
 }
 
-<<<<<<< HEAD
 bool esInicial(casilla c)
 {
 	return c.inicial;
