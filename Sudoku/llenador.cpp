@@ -1,40 +1,68 @@
 #include "tablero.h"
+#include <iostream>
+#include <time.h>
+using namespace std;
 
-void llenador (tablero &tab)
+void mostrarMatriz(tablero tab)
 {
-		int fila = 0;
-		int columna = 0;
-		bool imposible = true; //Para evitar bucles infinitos en caso de que no haya valores posibles
-		for (int z=1;z<=tab.tamano*tab.tamano;z++)
+	for (int i=0;i<tab.tamano*tab.tamano;i++)
+	{
+		for (int j=0;j<tab.tamano*tab.tamano;j++)
+		{
+			cout <<tab.table[i][j].valor;
+			if (j==(tab.tamano*tab.tamano-1))
+				cout <<endl;
+		}
+	}
+}
+
+
+void llenador (tablero &tab,int fila,int columna,bool finalizado)
+{
+		srand (time(NULL));
+		int valoresPosibles[MAXTtamano];
+		//Genera un vector con todos los valores posibles para la casilla en orden aleatorio
+		for (int y=0;y<tab.tamano*tab.tamano;y++)
+		{
+			bool yaCogido=false;
+			do
+			{
+				valoresPosibles[y]=(rand()%(tab.tamano*tab.tamano))+1;
+				yaCogido=false;
+				for (int x=0;x<y;x++)
+				{
+					if (valoresPosibles[x]==valoresPosibles[y])
+						yaCogido=true;
+				}
+			}
+			while (yaCogido==true);
+		}
+		//Fin generador vector	
+		if (!finalizado)
 		{
 			for (int i=0;i<tab.tamano*tab.tamano;i++)
 			{
-				if (tab.table[i][columna].valor!=z&&i!=fila)
-					imposible=false;
+				if (esInicial(tab.table[fila][columna])==false)
+				{
+					ponerValor(tab.table[fila][columna],valoresPosibles[i]);
+					if (conflicto(tab,fila,columna)==false)
+					{
+						if (columna==tab.tamano*tab.tamano-1&&fila==tab.tamano*tab.tamano-1)
+							llenador (tab,fila,columna,true);
+						if (columna!=tab.tamano*tab.tamano-1)
+							llenador (tab,fila,columna+1,false);
+						else llenador (tab,fila+1,0,false);
+					}
+				}
+				else 
+				{
+					if (columna==tab.tamano*tab.tamano-1&&fila==tab.tamano*tab.tamano-1)
+						llenador(tab,fila,columna,true);
+					if (columna!=tab.tamano*tab.tamano-1)
+							llenador (tab,fila,columna+1,false);
+					else llenador (tab,fila+1,0,false);
+				}
 			}
-			for (int j=0;j<tab.tamano*tab.tamano;j++)
-			{
-				if (tab.table[fila][j].valor!=z&&j!=columna)
-					imposible=false;
-			}
-
 		}
-		if (tab.table[fila][columna].inicial==false)
-		aleatorioTablero(tab,fila,columna);
-
-
-/*
-Esquema de como hacerlo:
-1. Comprueba si hay algún valor posible.
-2. Si no lo hay, se llama a sí misma en la casilla anterior
-3. Si lo hay y la casilla no es inicial, genera un valor aleatorio válido para esa casilla.
-Ese valor aleatorio será distinto de aquellos ya generados (usar un vector que se actualiza?)
-4. Una vez generado un valor válido, si la casilla no es la última, se llama a sí mismo en la casilla siguiente.
-5. Si ha llegado a la última casilla, el sudoku se ha generado correctamente.
-
-Módulos usados:
-
-bool conflicto
-void aleatorio
-
-*/
+}
+		

@@ -33,10 +33,8 @@ bool estaVacia(casilla c)
 	return c.vacia;
 }
 
-void BorrarCasilla(casilla cas) //hace lo mismo que iniciar, no sé que piden con iniciar, mañana pregunto en IP
-=======
-void BorrarCasilla(casilla cas) //hace lo mismo que iniciar, no sÃ© que piden con iniciar, maÃ±ana pregunto en IP
->>>>>>> origin/master
+void BorrarCasilla(casilla cas)
+
 {
 	if (cas.inicial==false)
 		cas.vacia=true;
@@ -53,11 +51,7 @@ bool EstaVacia(casilla cas)
 void aleatorio(casilla cas,int valoresposibles)
 {
 	srand(time(NULL));
-<<<<<<< HEAD
+
 	ponerValor(cas,(rand()%valoresposibles)+1);
 	cas.vacia=false;
 }
-=======
-	PonerValor(cas,(rand()%valoresposibles)+1);
-}
->>>>>>> origin/master
