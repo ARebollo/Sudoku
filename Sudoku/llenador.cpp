@@ -3,23 +3,8 @@
 #include <time.h>
 using namespace std;
 
-void mostrarMatriz(tablero tab)
+void llenador (tablero &tab,int fila,int columna,bool &finalizado)
 {
-	for (int i=0;i<tab.tamano*tab.tamano;i++)
-	{
-		for (int j=0;j<tab.tamano*tab.tamano;j++)
-		{
-			cout <<tab.table[i][j].valor;
-			if (j==(tab.tamano*tab.tamano-1))
-				cout <<endl;
-		}
-	}
-}
-
-
-void llenador (tablero &tab,int fila,int columna,bool finalizado)
-{
-		srand (time(NULL));
 		int valoresPosibles[MAXTtamano];
 		//Genera un vector con todos los valores posibles para la casilla en orden aleatorio
 		for (int y=0;y<tab.tamano*tab.tamano;y++)
@@ -37,32 +22,57 @@ void llenador (tablero &tab,int fila,int columna,bool finalizado)
 			}
 			while (yaCogido==true);
 		}
-		//Fin generador vector	
-		if (!finalizado)
+		if (finalizado==false)
 		{
-			for (int i=0;i<tab.tamano*tab.tamano;i++)
-			{
 				if (esInicial(tab.table[fila][columna])==false)
 				{
-					ponerValor(tab.table[fila][columna],valoresPosibles[i]);
-					if (conflicto(tab,fila,columna)==false)
+					//
+					
+					int i=0;
+					while (i<tab.tamano*tab.tamano&&finalizado==false)
 					{
-						if (columna==tab.tamano*tab.tamano-1&&fila==tab.tamano*tab.tamano-1)
-							llenador (tab,fila,columna,true);
-						if (columna!=tab.tamano*tab.tamano-1)
-							llenador (tab,fila,columna+1,false);
-						else llenador (tab,fila+1,0,false);
+						//ponerValor(tab.table[fila][columna],valoresPosibles[i]);
+						//TEntornoPonerNumero(fila,columna,[valoresPosibles[i]);
+						tab.table[fila][columna].valor=valoresPosibles[i];
+						i++;
+						if (conflicto(tab,fila,columna)==false)
+						{
+							if (columna==tab.tamano*tab.tamano-1&&fila==tab.tamano*tab.tamano-1)
+							{
+								finalizado=true;
+								llenador(tab,fila,columna,finalizado);
+							}
+							else if (columna==tab.tamano*tab.tamano-1)
+							{
+								llenador (tab,fila+1,0,finalizado);
+							}
+							else
+							{
+								llenador (tab,fila,columna+1,finalizado);
+							}
+						}
+						if (i==tab.tamano*tab.tamano&&finalizado==false)
+						{
+							//ponerValor(tab.table[fila][columna],0);
+							//TEntornoPonerNumero(fila,columna,0);
+							tab.table[fila][columna].valor=0;
+						}
 					}
-				}
+				}		
 				else 
 				{
 					if (columna==tab.tamano*tab.tamano-1&&fila==tab.tamano*tab.tamano-1)
-						llenador(tab,fila,columna,true);
-					if (columna!=tab.tamano*tab.tamano-1)
-							llenador (tab,fila,columna+1,false);
-					else llenador (tab,fila+1,0,false);
+						{
+							finalizado=true;
+						}
+					else if (columna==tab.tamano*tab.tamano-1)
+						{
+							llenador (tab,fila+1,0,finalizado);
+						}
+						else
+						{
+							llenador (tab,fila,columna+1,finalizado);
+						}
 				}
-			}
 		}
 }
-		

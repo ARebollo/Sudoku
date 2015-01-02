@@ -1,29 +1,23 @@
-﻿Compilación iniciada a las 24/11/2014 21:39:31.
-     1>Proyecto "E:\Steam Juegos\Proyectos\Sudoku\Sudoku\Sudoku.vcxproj" en el nodo 2 (Build destinos).
+﻿Compilación iniciada a las 20/12/2014 12:24:28.
+     1>Proyecto "D:\Steam Juegos\Proyectos\Sudoku\Sudoku\Sudoku\Sudoku.vcxproj" en el nodo 2 (Build destinos).
      1>ClCompile:
-         E:\Steam Juegos\Visual Studio 2012\VC\bin\CL.exe /c /I"E:\Steam Juegos\Proyectos\Allegro\include" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt src\entorno.cpp
+         D:\Steam Juegos\Visual Studio 2012\VC\bin\CL.exe /c /I"E:\Steam Juegos\Proyectos\Allegro\include" /ZI /nologo /W3 /WX- /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt casilla.cpp llenador.cpp tablero.cpp src\entorno.cpp src\Sudoku.cpp src\utilidades.cpp
+         utilidades.cpp
+         Sudoku.cpp
+     1>d:\steam juegos\proyectos\sudoku\sudoku\sudoku\src\sudoku.cpp(11): fatal error C1083: No se puede abrir el archivo incluir: 'tablero.h': No such file or directory
          entorno.cpp
-     1>e:\steam juegos\proyectos\allegro\include\allegro\gfx.h(288): warning C4200: se ha utilizado una extensión no estándar : matriz de tamaño cero en struct/union
-                 No se puede generar el constructor de copias o el operador de asignación de copias cuando el tipo definido por el usuario contiene una matriz de tamaño cero
-     1>e:\steam juegos\proyectos\allegro\include\allegro\rle.h(34): warning C4200: se ha utilizado una extensión no estándar : matriz de tamaño cero en struct/union
-                 No se puede generar el constructor de copias o el operador de asignación de copias cuando el tipo definido por el usuario contiene una matriz de tamaño cero
-     1>e:\steam juegos\proyectos\allegro\include\allegro\font.h(31): warning C4200: se ha utilizado una extensión no estándar : matriz de tamaño cero en struct/union
-                 No se puede generar el constructor de copias o el operador de asignación de copias cuando el tipo definido por el usuario contiene una matriz de tamaño cero
-     1>e:\steam juegos\proyectos\allegro\include\allegro\fix.h(45): warning C4244: 'return' : conversión de 'double' a 'float'; posible pérdida de datos
-     1>e:\steam juegos\proyectos\sudoku\sudoku\src\entorno.cpp(371): error C2664: 'textout_ex' : no se puede convertir el parámetro 3 de 'const char *' a 'char *'
-                 Se pierden calificadores en la conversión
-     1>e:\steam juegos\proyectos\sudoku\sudoku\src\entorno.cpp(385): error C2664: 'textout_ex' : no se puede convertir el parámetro 3 de 'const char *' a 'char *'
-                 Se pierden calificadores en la conversión
-     1>e:\steam juegos\proyectos\sudoku\sudoku\src\entorno.cpp(424): error C2664: 'textout_ex' : no se puede convertir el parámetro 3 de 'const char *' a 'char *'
-                 Se pierden calificadores en la conversión
-     1>e:\steam juegos\proyectos\sudoku\sudoku\src\entorno.cpp(434): error C2664: 'textout_ex' : no se puede convertir el parámetro 3 de 'const char *' a 'char *'
-                 Se pierden calificadores en la conversión
-     1>e:\steam juegos\proyectos\sudoku\sudoku\src\entorno.cpp(456): error C3861: 'usleep': no se encontró el identificador
-     1>e:\steam juegos\proyectos\sudoku\sudoku\src\entorno.cpp(461): error C2664: 'textout_ex' : no se puede convertir el parámetro 3 de 'const char *' a 'char *'
-                 Se pierden calificadores en la conversión
-     1>e:\steam juegos\proyectos\sudoku\sudoku\src\entorno.cpp(528): error C3861: 'usleep': no se encontró el identificador
-     1>Compilación del proyecto terminada "E:\Steam Juegos\Proyectos\Sudoku\Sudoku\Sudoku.vcxproj" (Build destinos) -- ERROR.
+     1>d:\steam juegos\proyectos\sudoku\sudoku\sudoku\src\entorno.cpp(16): fatal error C1083: No se puede abrir el archivo incluir: 'allegro.h': No such file or directory
+         tablero.cpp
+         llenador.cpp
+     1>d:\steam juegos\proyectos\sudoku\sudoku\sudoku\llenador.cpp(22): warning C4244: 'argumento' : conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+         casilla.cpp
+     1>d:\steam juegos\proyectos\sudoku\sudoku\sudoku\casilla.cpp(25): error C2059: error de sintaxis : '<<'
+     1>d:\steam juegos\proyectos\sudoku\sudoku\sudoku\casilla.cpp(27): error C2143: error de sintaxis : falta ';' delante de '{'
+     1>d:\steam juegos\proyectos\sudoku\sudoku\sudoku\casilla.cpp(27): error C2447: '{' : falta el encabezado de función (¿lista formal de estilo anterior?)
+     1>d:\steam juegos\proyectos\sudoku\sudoku\sudoku\casilla.cpp(53): warning C4244: 'argumento' : conversión de 'time_t' a 'unsigned int'; posible pérdida de datos
+         Generando código...
+     1>Compilación del proyecto terminada "D:\Steam Juegos\Proyectos\Sudoku\Sudoku\Sudoku\Sudoku.vcxproj" (Build destinos) -- ERROR.
 
 ERROR al compilar.
 
-Tiempo transcurrido 00:00:00.45
+Tiempo transcurrido 00:00:02.87

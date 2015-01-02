@@ -2,27 +2,27 @@
 #include <time.h>
 #include <iostream>
 
-void ponerValor(casilla cas,int valor)
+void ponerValor(casilla &c,int valor)
 {
-	if (cas.inicial==false)
-		cas.valor=valor;
-	cas.vacia=false;
+	if (c.inicial==false)
+		c.valor=valor;
+	c.vacia=false;
 }
 
-void ponerValorInicial(casilla cas,int valor)
+void ponerValorInicial(casilla &c,int valor)
 {
-	cas.valor=valor;
-	cas.vacia=false;
-	cas.inicial=true;
+	c.valor=valor;
+	c.vacia=false;
+	c.inicial=true;
 }
 
-int hallarValor(casilla cas)
+int hallarValor(casilla c)
 {
-	int valor = cas.valor;
+	int valor = c.valor;
 	return  valor;
 }
 
-<<<<<<< HEAD
+
 bool esInicial(casilla c)
 {
 	return c.inicial;
@@ -33,25 +33,24 @@ bool estaVacia(casilla c)
 	return c.vacia;
 }
 
-void BorrarCasilla(casilla cas)
+void BorrarCasilla(casilla c)
 
 {
-	if (cas.inicial==false)
-		cas.vacia=true;
+	if (c.inicial==false)
+		c.vacia=true;
 }
 
-bool EstaVacia(casilla cas)
+bool EstaVacia(casilla c)
 {
 	bool vacia = false;
-	if (cas.valor==0)
+	if (c.valor==0)
 		vacia = true;
 	return vacia;
 }
 
-void aleatorio(casilla cas,int valoresposibles)
+void aleatorio(casilla &c,int valoresposibles)
 {
 	srand(time(NULL));
-
-	ponerValor(cas,(rand()%valoresposibles)+1);
-	cas.vacia=false;
+	ponerValor(c,(rand()%valoresposibles)+1);
+	c.vacia=false;
 }

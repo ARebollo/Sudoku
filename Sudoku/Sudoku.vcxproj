@@ -66,17 +66,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="casilla.cpp" />
+    <ClCompile Include="entorno.cpp" />
     <ClCompile Include="llenador.cpp" />
+    <ClCompile Include="Sudoku.cpp" />
     <ClCompile Include="tablero.cpp" />
-    <ClCompile Include="src\entorno.cpp" />
-    <ClCompile Include="src\Sudoku.cpp" />
-    <ClCompile Include="src\utilidades.cpp" />
+    <ClCompile Include="utilidades.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="casilla.h" />
+    <ClInclude Include="entorno.h" />
+    <ClInclude Include="llenador.h" />
     <ClInclude Include="tablero.h" />
-    <ClInclude Include="src\entorno.h" />
-    <ClInclude Include="src\utilidades.h" />
+    <ClInclude Include="utilidades.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

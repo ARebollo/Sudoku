@@ -1,7 +1,6 @@
 #ifndef CASILLA_H_
 #define CASILLA_H_
 
-
 struct casilla {
 	int valor;
 	bool inicial; //True si es un valor inicial del tablero
@@ -9,13 +8,13 @@ struct casilla {
 };
 
 //Inicializa una casilla
-void iniciar(casilla c);
+void iniciar(casilla &c);
 
 //Pone un valor en una casilla pedida
-void ponerValor(casilla c,int valor);
+void ponerValor(casilla &c,int valor);
 
 //Poner un valor inicial en una casilla pedida
-void ponerValorInicial(casilla cas,int valor);
+void ponerValorInicial(casilla &c,int valor);
 
 //True si es inicial, false si no
 bool esInicial(casilla c);
@@ -27,13 +26,13 @@ bool estaVacia(casilla c);
 int hallarValor(casilla c);
 
 //Pone el valor de la casilla pedida a 0
-void borrarCasilla(casilla c);
+void borrarCasilla(casilla &c);
 
 //True si está vacía, false si no
 bool EstaVacia(casilla c);
 
 //Aleatoriza una casilla pedida con un valor válido con un máximo especificado
-void aleatorio(casilla c,int valoresposibles);
+void aleatorio(casilla &c,int valoresposibles);
 
 
 #endif // !CASILLA_H_
