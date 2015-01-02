@@ -22,7 +22,10 @@ int hallarValor(casilla c)
 	return  valor;
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/master
 bool esInicial(casilla c)
 {
 	return c.inicial;
